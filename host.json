@@ -5,5 +5,5 @@
         "routePrefix": "api"
     },
     "watchDirectories": [ "." ],
-    "functions": [ "googlenewsingest", "tweetingest" ]
+    "functions": [ "googlenewsingest-azurefunction", "tweetingest-azurefunction" ]
 }
