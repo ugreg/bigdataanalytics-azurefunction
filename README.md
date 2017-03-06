@@ -1,0 +1,2 @@
+# bigdataanalytics-azurefunction
+Azure Function
