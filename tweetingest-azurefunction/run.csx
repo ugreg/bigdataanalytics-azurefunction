@@ -3,6 +3,7 @@ using System;
 using System.Web;
 using System.Net;
 using System.Net.Http;
+using System.Net.Requests;
 using System.Runtime.Serialization.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
