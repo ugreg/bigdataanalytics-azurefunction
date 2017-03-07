@@ -3,7 +3,8 @@
     "net46":{
       "dependencies": {
         "Newtonsoft.Json": "9.0.1",
-        "System.Runtime.Serialization.Json": "4.3.0"
+        "System.Runtime.Serialization.Json": "4.3.0",
+        "System.Net.HttpWebRequest": ""
       }
     }
    }
