@@ -2,8 +2,7 @@ using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Net.Http;
-// using System.Net.HttpWebRequest;
-using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
@@ -32,7 +31,6 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
                 response.StatusDescription));
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
             object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
-            // Response jsonResponse = objResponse as Response;
 
             log.Info(objResponse.ToString());
         }
