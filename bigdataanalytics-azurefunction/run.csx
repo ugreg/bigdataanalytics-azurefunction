@@ -1,10 +1,10 @@
+#load "ingestservices\NewsServices.csx"
+#load "ingestservices\TweetServices.csx"
+
 using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Net;
-
-#load ".\ingestengines\order.csx"
-#load ".\ingestengines\order.csx"
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
