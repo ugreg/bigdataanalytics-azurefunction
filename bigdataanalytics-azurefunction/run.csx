@@ -3,6 +3,8 @@ using System;
 using System.IO;
 using System.Net;
 
+#load "..\shared\order.csx"
+
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
     if (myTimer.IsPastDue)
@@ -25,8 +27,8 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
         {
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                Stream newStream = response.GetResponseStream();
-                StreamReader sr = new StreamReader(newStream);
+                Stream stream = response.GetResponseStream();
+                StreamReader sr = new StreamReader(stream);
                 var result = sr.ReadToEnd();
             }
         }
