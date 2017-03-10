@@ -1,10 +1,10 @@
 using Newtonsoft.Json;
 using System;
-using System.Web;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Requests;
-using System.Runtime.Serialization.Json;
+using System.Web;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
@@ -26,15 +26,12 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
         using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
         {
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception(String.Format(
-                "Server error (HTTP {0}: {1}).",
-                response.StatusCode,
-                response.StatusDescription));
-            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
-            object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
-
-            log.Info(objResponse.ToString());
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                Stream newStream = response.GetResponseStream();
+                StreamReader sr = new StreamReader(newStream);
+                var result = sr.ReadToEnd();
+            }
         }
     }
     catch (Exception e)
