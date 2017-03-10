@@ -33,6 +33,6 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     }
     catch (Exception e)
     {
-        log.Info("GAWWWHHH " + e.Message);
+        log.Info("Exception Message: " + e.Message);
     }
 }
