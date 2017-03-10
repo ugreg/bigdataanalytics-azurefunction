@@ -2,9 +2,6 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Net.Requests;
-using System.Web;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
