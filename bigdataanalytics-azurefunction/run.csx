@@ -3,7 +3,8 @@ using System;
 using System.IO;
 using System.Net;
 
-#load "..\shared\order.csx"
+#load ".\ingestengines\order.csx"
+#load ".\ingestengines\order.csx"
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
