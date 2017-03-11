@@ -5,5 +5,8 @@ using System.Net;
 
 public class TweetService
 {
+    public TweetService()
+    {
 
+    }
 }
