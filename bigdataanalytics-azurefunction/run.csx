@@ -1,5 +1,5 @@
-#load "ingestservices\NewsServices.csx"
-#load "ingestservices\TweetServices.csx"
+#load "ingestservices\NewsService.csx"
+#load "ingestservices\TweetService.csx"
 #load "ingestservices\NewsModel.csx"
 #load "ingestservices\TweetModel.csx"
 
@@ -10,6 +10,10 @@ using System.Net;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
+
+    NewsService newsService = new NewsService();
+    TweetService tweetService = new TweetService();
+
     if (myTimer.IsPastDue)
     {
         log.Info("Timer is running late!");
