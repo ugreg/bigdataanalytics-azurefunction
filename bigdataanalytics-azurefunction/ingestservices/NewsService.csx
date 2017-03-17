@@ -32,7 +32,6 @@ public class NewsService
         }
         catch (Exception e)
         {
-            log.Info("Exception Message: " + e.Message);
         }
     }
 }
