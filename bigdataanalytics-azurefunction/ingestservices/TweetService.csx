@@ -17,7 +17,7 @@ public class TweetService
     {
         try
         {
-            HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create(restEndpoint) as HttpWebRequest;
 
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             {
@@ -31,6 +31,7 @@ public class TweetService
         }
         catch (Exception e)
         {
+            log.Info("Exception Message: " + e.Message);
         }
     }
 }

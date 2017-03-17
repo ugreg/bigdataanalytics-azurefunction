@@ -18,7 +18,7 @@ public class NewsService
     {
         try
         {
-            HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create(restEndpoint) as HttpWebRequest;
 
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             {
