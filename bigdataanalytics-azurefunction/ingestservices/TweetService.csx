@@ -31,7 +31,7 @@ public class TweetService
         }
         catch (Exception e)
         {
-            log.Info("Exception Message: " + e.Message);
+
         }
     }
 }
