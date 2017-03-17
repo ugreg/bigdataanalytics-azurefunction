@@ -1,7 +1,7 @@
 #load "ingestservices\NewsService.csx"
 #load "ingestservices\TweetService.csx"
-#load "ingestservices\NewsModel.csx"
-#load "ingestservices\TweetModel.csx"
+#load "models\NewsModel.csx"
+#load "models\TweetModel.csx"
 
 using Newtonsoft.Json;
 using System;
