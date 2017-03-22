@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,29 @@ namespace ConsoleApp1
 {
     public class NewsModel
     {
-        private class Article
-        {
-            public string author { get; set; }
-            public string title { get; set; }
-            public string description { get; set; }
-            public string url { get; set; }
-            public string urlToImage { get; set; }
-            public string publishedAt { get; set; }
-        }
+        [JsonProperty("status")]
+        public string status { get; }
+        [JsonProperty("source")]
+        public string source { get; }
+        [JsonProperty("sortBy")]
+        public string sortBy { get; }
+        [JsonProperty("articles")]
+        public List<Article> articles { get; }
 
-        private class RootObject
+        public class Article
         {
-            public string status { get; set; }
-            public string source { get; set; }
-            public string sortBy { get; set; }
-            public List<Article> articles { get; set; }
+            [JsonProperty("author")]
+            public string author { get; }
+            [JsonProperty("title")]
+            public string title { get; }
+            [JsonProperty("description")]
+            public string description { get; }
+            [JsonProperty("url")]
+            public string url { get; }
+            [JsonProperty("urlToImage")]
+            public string urlToImage { get; }
+            [JsonProperty("publishedAt")]
+            public string publishedAt { get; }
         }
     }    
 }
