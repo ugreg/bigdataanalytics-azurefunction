@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Net;
 using System.IO;
+using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
@@ -9,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Getting news json. . .");
+            Console.WriteLine("Getting da news. . .");
             NewsService ns = new NewsService();
             string allDaNews = ns.getNews();
 
@@ -20,7 +21,7 @@ namespace ConsoleApp1
         public class NewsService
         {
             private static String apiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
-            private String enpoint = $"https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey={apiKey}";
+            private String enpoint = $"https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=3e99c92f3b244bc4ae9693eb2f5f97fb";
 
             public NewsService()
             {
