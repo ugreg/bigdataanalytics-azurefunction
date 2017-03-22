@@ -1,4 +1,4 @@
-#load "models\TweetModel.csx"
+#load "..\models\TweetModel.csx"
 
 using System;
 using System.IO;

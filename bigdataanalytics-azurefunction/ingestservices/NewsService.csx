@@ -1,4 +1,4 @@
-#load "models\NewsModel.csx"
+#load "..\models\NewsModel.csx"
 
 using System;
 using System.IO;
