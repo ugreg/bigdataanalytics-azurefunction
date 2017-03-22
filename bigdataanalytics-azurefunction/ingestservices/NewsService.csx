@@ -1,7 +1,9 @@
-using Newtonsoft.Json;
+#load "models\NewsModel.csx"
+
 using System;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 public class NewsService
 {
