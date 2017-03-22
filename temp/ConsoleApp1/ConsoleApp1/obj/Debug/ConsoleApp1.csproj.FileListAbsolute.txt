@@ -6,3 +6,11 @@ C:\Users\grego\Desktop\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\grego\Desktop\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml
 C:\Users\grego\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\grego\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\grego\Documents\GitHub\bigdataanalytics-azurefunction\temp\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

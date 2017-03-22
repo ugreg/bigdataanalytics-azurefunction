@@ -11,13 +11,27 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Getting news json. . .");
             NewsService ns = new NewsService();
+            ns.getNews();
+
+            /*
+             string responseAsString = null;
+            responseAsString = await response.Content.ReadAsStringAsync();
+            //OutputField.Text = responseAsString;
+
+            //TODO: Add check to see if API Call recieved a response
+
+            RootObject rootObject = null;
+
+            rootObject = JsonConvert.DeserializeObject<RootObject>(responseAsString);
+             */
+
+            NewsModel model = new NewsModel();
         }
 
         public class NewsService
         {
-
             private static String apiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
-            private String restEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={apiKey}";
+            private String enpoint = $"https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=3e99c92f3b244bc4ae9693eb2f5f97fb";
 
             public NewsService()
             {
@@ -28,7 +42,9 @@ namespace ConsoleApp1
             {
                 try
                 {
-                    HttpWebRequest request = WebRequest.Create(restEndpoint) as HttpWebRequest;
+                    HttpWebRequest request = WebRequest.Create(enpoint) as HttpWebRequest;
+                    request.Headers.Add("Garnet", "Amethyst");
+                    request.Headers.Add("AndPearl", "AndSteven");
 
                     using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                     {
