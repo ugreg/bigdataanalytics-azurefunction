@@ -1,12 +1,10 @@
 #load "ingestservices\NewsService.csx"
 #load "ingestservices\TweetService.csx"
-#load "models\NewsModel.csx"
-#load "models\TweetModel.csx"
 
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
