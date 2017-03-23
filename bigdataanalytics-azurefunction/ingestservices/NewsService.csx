@@ -6,6 +6,9 @@
 using System;
 using System.IO;
 using System.Net;
+using Microsoft.Rest.ClientRuntime;
+using Microsoft.Rest.ClientRuntime.Azure;
+using Microsoft.Azure.Management.DataLake.Store;
 using Newtonsoft.Json;
 
 public class NewsService
