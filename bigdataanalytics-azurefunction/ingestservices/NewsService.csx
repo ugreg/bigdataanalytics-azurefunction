@@ -1,7 +1,7 @@
 #load "..\models\NewsModel.csx"
-#r "Microsoft.Rest.ClientRuntime.dll"
-#r "Microsoft.Rest.ClientRuntime.Azure.dll"
-#r "Microsoft.Azure.Management.DataLake.Store.dll"
+#r "bin\Microsoft.Rest.ClientRuntime.dll"
+#r "bin\Microsoft.Rest.ClientRuntime.Azure.dll"
+#r "bin\Microsoft.Azure.Management.DataLake.Store.dll"
 
 using System;
 using System.IO;
