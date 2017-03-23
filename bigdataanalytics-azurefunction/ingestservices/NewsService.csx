@@ -1,5 +1,5 @@
 #load "..\models\NewsModel.csx"
-#r "..\bin\Microsoft.Rest.ClientRuntime"
+#r "..\bin\Microsoft.Rest.ClientRuntime.dll"
 
 using System;
 using System.IO;
@@ -35,6 +35,7 @@ public class NewsService
         }
         catch (Exception e)
         {
+            log.Info("ERROR: " + e.ToString());
         }
     }
 }
