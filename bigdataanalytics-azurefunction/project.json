@@ -1,5 +1,12 @@
 {
     "frameworks": {
+        "net45": {
+            "dependencies": {
+                "Microsoft.Rest.ClientRuntime": "2.3.2",
+                "Microsoft.Rest.ClientRuntime.Azure": "3.3.2",
+                "Microsoft.Azure.Management.DataLake.Store": "1.0.4"
+            }
+        },
         "net46": {
             "dependencies": {
                 "Newtonsoft.Json": "9.0.1",
