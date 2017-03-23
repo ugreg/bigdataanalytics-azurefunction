@@ -1,3 +1,4 @@
+#load "..\models\NewsModel.csx"
 #load "..\models\TweetModel.csx"
 
 using System;
@@ -5,17 +6,18 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 
-public class TweetService
+public class DataIngestService
 {
-    private static String apiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
-    private String restEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={apiKey}";
 
-    public TweetService()
+    private static String newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
+    private String newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={apiKey}";
+
+    public DataIngestService()
     {
 
     }
 
-    public void getTweets()
+    public void getNews()
     {
         try
         {
@@ -33,7 +35,11 @@ public class TweetService
         }
         catch (Exception e)
         {
-
         }
+    }
+
+    public void getTweets()
+    {
+
     }
 }

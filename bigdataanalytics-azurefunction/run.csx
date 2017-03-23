@@ -1,5 +1,4 @@
-#load "ingestservices\NewsService.csx"
-#load "ingestservices\TweetService.csx"
+#load "services\DataIngestService.csx"
 
 using System;
 using System.IO;
@@ -9,8 +8,7 @@ using Newtonsoft.Json;
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
 
-    NewsService newsService = new NewsService();
-    TweetService tweetService = new TweetService();
+    DataIngestService dataIngestService = new DataIngestService();
 
     if (myTimer.IsPastDue)
     {
