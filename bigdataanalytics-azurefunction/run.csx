@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-
     DataIngestService dataIngestService = new DataIngestService();
 
     if (myTimer.IsPastDue)

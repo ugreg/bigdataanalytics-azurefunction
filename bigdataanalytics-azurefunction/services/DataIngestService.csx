@@ -10,9 +10,14 @@ public class DataIngestService
 {
 
     private static String newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
-    private String newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={apiKey}";
+    private String newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={newsApiKey}";
 
     public DataIngestService()
+    {
+
+    }
+
+    public void ingestAllTheThings()
     {
 
     }
@@ -21,7 +26,7 @@ public class DataIngestService
     {
         try
         {
-            HttpWebRequest request = WebRequest.Create(restEndpoint) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create(newsApiEndpoint) as HttpWebRequest;
 
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             {
