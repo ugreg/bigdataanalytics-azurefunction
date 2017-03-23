@@ -10,6 +10,8 @@ public class TweetService
     private static String apiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
     private String restEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={apiKey}";
 
+    private TraceWriter log;
+
     public TweetService()
     {
 
@@ -33,6 +35,7 @@ public class TweetService
         }
         catch (Exception e)
         {
+            log = new TraceWriter();
             log.Info("ERROR: " + e.ToString());
         }
     }
