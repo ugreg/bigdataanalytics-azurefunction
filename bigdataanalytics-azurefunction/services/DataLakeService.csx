@@ -14,8 +14,22 @@ public class NewsService
     private static DataLakeStoreAccountManagementClient _adlsClient;
     private static DataLakeStoreFileSystemManagementClient _adlsFileSystemClient;
 
+    private static string _adlsAccountName;
+    private static string _resourceGroupName;
+    private static string _location;
+    private static string _subId;
+
     public DataLakeService()
     {
+        _adlsAccountName = "bigdataanalyticsadls";
+        _resourceGroupName = "BigDataAnalytics";
+        _location = "East US 2";
+        _subId = "aa7297b5-e8cb-4697-ac3d-dac5fe509678";
 
+        string localFolderPath = @"dlstoretemp\";
+        string localFilePath = Path.Combine(localFolderPath, "file.txt");
+
+        string remoteFolderPath = "adl://bigdataanalyticsadls.azuredatalakestore.net";
+        string remoteFilePath = Path.Combine(remoteFolderPath, "file.txt");
     }
 }
