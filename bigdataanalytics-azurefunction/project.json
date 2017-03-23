@@ -4,10 +4,7 @@
             "dependencies": {
                 "Newtonsoft.Json": "9.0.1",
                 "System.Runtime.Serialization.Json": "4.3.0",
-                "System.Net.Requests": "4.3.0",
-                "Microsoft.Rest.ClientRuntime": "2.3.2",
-                "Microsoft.Rest.ClientRuntime.Azure": "3.3.2",
-                "Microsoft.Azure.Management.DataLake.Store": "1.0.4"
+                "System.Net.Requests": "4.3.0"
             }
         }
     }
