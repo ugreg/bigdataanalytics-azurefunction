@@ -1,5 +1,5 @@
 #load "..\models\NewsModel.csx"
-#r "..\bin\Microsoft.Rest.ClientRuntime.dll"
+#r "Microsoft.Rest.ClientRuntime"
 
 using System;
 using System.IO;
