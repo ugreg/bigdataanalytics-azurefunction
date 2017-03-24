@@ -5,9 +5,13 @@
 using System;
 using System.IO;
 using System.Net;
+using Microsoft.Azure.Management.DataLake.Store;
+using Microsoft.Azure.Management.DataLake.Store.Models;
+using Microsoft.Azure.Management.DataLake.StoreUploader;
+using Microsoft.Rest.Azure.Authentication;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Rest.ClientRuntime;
 using Microsoft.Rest.ClientRuntime.Azure;
-using Microsoft.Azure.Management.DataLake.Store;
 
 public class DataLakeService
 {
