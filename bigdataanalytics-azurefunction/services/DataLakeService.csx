@@ -36,14 +36,14 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        string localFolderPath = @"dlstoretemp\";
+        string localFolderPath = @".\dlstoretemp\";
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = "adl://bigdataanalyticsadls.azuredatalakestore.net";
-        string remoteFilePath = Path.Combine(remoteFolderPath, "file.txt");
+        string remoteFilePath = Path.Combine(remoteFolderPath, "remotefile.txt");
         bool force = true;
 
-        var parameters = new UploadParameters(localFilePath, remoteFilePath, _adlsAccountName, isOverwrite: force);
+        var parameters = new UploadParameters(".\file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
         var frontend = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
         var uploader = new DataLakeStoreUploader(parameters, frontend);
         uploader.Execute();
