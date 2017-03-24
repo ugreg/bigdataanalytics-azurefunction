@@ -27,14 +27,14 @@ public class NewsService
         _subId = "aa7297b5-e8cb-4697-ac3d-dac5fe509678";
     }
 
-    // Upload a file
-    public void UploadFile(bool force = true)
+    public void UploadFile()
     {
         string localFolderPath = @"dlstoretemp\";
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = "adl://bigdataanalyticsadls.azuredatalakestore.net";
         string remoteFilePath = Path.Combine(remoteFolderPath, "file.txt");
+        bool force = true;
 
         var parameters = new UploadParameters(localFilePath, remoteFilePath, _adlsAccountName, isOverwrite: force);
         var frontend = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
