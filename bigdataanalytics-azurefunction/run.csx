@@ -1,5 +1,5 @@
 #load "services\DataIngestService.csx"
-
+#load "services\DataLakeService.csx"
 using System;
 using System.IO;
 using System.Net;
@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    DataIngestService dataIngestService = new DataIngestService();
+    DataLakeService dataIngestService = new DataLakeService();
     dataIngestService.UploadFile();
 
     if (myTimer.IsPastDue)
