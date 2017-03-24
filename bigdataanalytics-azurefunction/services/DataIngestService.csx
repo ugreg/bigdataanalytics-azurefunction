@@ -22,11 +22,13 @@ public class DataIngestService
 
     }
 
-    public void getNews()
+    public string getNews()
     {
         try
         {
             HttpWebRequest request = WebRequest.Create(newsApiEndpoint) as HttpWebRequest;
+            request.Headers.Add("Garnet", "Amethyst");
+            request.Headers.Add("AndPearl", "AndSteven");
 
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             {
@@ -34,13 +36,24 @@ public class DataIngestService
                 {
                     Stream stream = response.GetResponseStream();
                     StreamReader sr = new StreamReader(stream);
-                    var result = sr.ReadToEnd();
+                    string result = "";
+                    result = sr.ReadToEnd();
+
+                    return result;
+                }
+
+                else
+                {
+                    return "-1";
                 }
             }
         }
         catch (Exception e)
         {
+
         }
+
+        return "-1";
     }
 
     public void getTweets()
