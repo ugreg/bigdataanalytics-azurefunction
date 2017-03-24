@@ -1,6 +1,6 @@
 #r "Microsoft.Azure.Management.DataLake.Store.dll"
 #r "Microsoft.Azure.Management.DataLake.StoreUploader.dll"
-#r "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
+#r "Microsoft.IdentityModel.Clients.ActiveDirectory"
 #r "Microsoft.Rest.ClientRuntime.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
@@ -43,7 +43,7 @@ public class DataLakeService
         string remoteFilePath = Path.Combine(remoteFolderPath, "remotefile.txt");
         bool force = true;
 
-        var parameters = new UploadParameters("file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
+        var parameters = new UploadParameters("D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
         var frontend = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
         var uploader = new DataLakeStoreUploader(parameters, frontend);
         uploader.Execute();
