@@ -1,10 +1,10 @@
 #r "Microsoft.Azure.Management.DataLake.Store.dll"
-#r "Microsoft.Azure.Management.DataLake.Store.Models.dll"
 #r "Microsoft.Azure.Management.DataLake.StoreUploader.dll"
 #r "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
-#r "Microsoft.Rest.Azure.Authentication.dll"
+#r "Microsoft.IdentityModel.Clients.ActiveDirectory.WindosForms.dll"
 #r "Microsoft.Rest.ClientRuntime.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.dll"
+#r "Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
 
 using System;
 using System.IO;
@@ -13,9 +13,9 @@ using Microsoft.Azure.Management.DataLake.Store;
 using Microsoft.Azure.Management.DataLake.Store.Models;
 using Microsoft.Azure.Management.DataLake.StoreUploader;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using Microsoft.Rest.Azure.Authentication;
 using Microsoft.Rest.ClientRuntime;
 using Microsoft.Rest.ClientRuntime.Azure;
+using Microsoft.Rest.ClientRuntime.Azure.Authentication;
 
 public class DataLakeService
 {
