@@ -1,6 +1,6 @@
 #r "Microsoft.Azure.Management.DataLake.Store.dll"
 #r "Microsoft.Azure.Management.DataLake.StoreUploader.dll"
-#r "Microsoft.IdentityModel.Clients.ActiveDirectory"
+#r "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
 #r "Microsoft.Rest.ClientRuntime.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
