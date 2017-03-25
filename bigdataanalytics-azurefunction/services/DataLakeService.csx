@@ -34,6 +34,27 @@ public class DataLakeService
         _subId = "aa7297b5-e8cb-4697-ac3d-dac5fe509678";
     }
 
+    // Create a directory
+    public async Task CreateDirectory()
+    {
+        SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+
+        // Getting creds is a lil tricky
+        // 1) setup an app in AAD
+        //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
+        // 2) get the creds
+        //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
+        var domain = "<AAD-directory-domain>";
+        var webApp_clientId = "<AAD-application-clientid>"; // 7a21effa-1320-46c0-af78-c333821e62c0
+        var clientCert = < AAD - application - client - certificate >
+        var clientAssertionCertificate = new ClientAssertionCertificate(webApp_clientId, clientCert);
+        var creds = await ApplicationTokenProvider.LoginSilentWithCertificateAsync(domain, clientAssertionCertificate);
+
+        _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
+        _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
+
+        await _adlsFileSystemClient.FileSystem.MkdirsAsync("bigdataanalyticsadls", "dlstoretemp");
+    }
     public void UploadFile()
     {
         string localFolderPath = @".\dlstoretemp\";
