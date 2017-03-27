@@ -44,6 +44,8 @@ public class DataLakeService
         //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
         // 2) get the creds
         //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
+        // 3) will need to create an aad app
+        // https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
         var domain = "<AAD-directory-domain>";
         var webApp_clientId = "<AAD-application-clientid>"; // 7a21effa-1320-46c0-af78-c333821e62c0
         var clientCert = < AAD - application - client - certificate >
