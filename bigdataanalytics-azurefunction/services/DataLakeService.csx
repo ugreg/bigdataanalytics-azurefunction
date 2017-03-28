@@ -5,6 +5,7 @@
 #r "Microsoft.Rest.ClientRuntime.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
+#r "mscorlib.dll"   
 
 using System;
 using System.IO;
