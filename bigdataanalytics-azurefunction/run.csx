@@ -7,8 +7,7 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    DataLakeService dataIngestService = new DataLakeService();
-    dataIngestService.UploadFile();
+    MainAsync().Wait();
 
     if (myTimer.IsPastDue)
     {
@@ -19,4 +18,18 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
         log.Info("Timer is on time!");
     }
     log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+}
+
+static async Task MainAsync()
+{
+    log.Info("Getting da news. . .");
+    DataIngestService ds = new DataIngestService();
+    string allDaNews = ds.getNews();
+
+    NewsModel newsModel = new NewsModel();
+    newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
+
+    DataLakeService dataIngestService = new DataLakeService();
+    // dataIngestService.UploadFile();
+    await dataIngestService.CreateDirectory();
 }
