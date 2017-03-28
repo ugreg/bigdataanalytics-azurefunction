@@ -1,3 +1,4 @@
+#r "System.Runtime.Serialization.dll"
 #r "Microsoft.Azure.Management.DataLake.Store.dll"
 #r "Microsoft.Azure.Management.DataLake.StoreUploader.dll"
 #r "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
@@ -8,6 +9,7 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Runtime.Serialization;
 using Microsoft.Azure.Management.DataLake.Store;
 using Microsoft.Azure.Management.DataLake.Store.Models;
 using Microsoft.Azure.Management.DataLake.StoreUploader;
