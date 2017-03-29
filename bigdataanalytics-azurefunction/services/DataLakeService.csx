@@ -47,30 +47,24 @@ public class DataLakeService
         //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
         // 3) will need to create an aad app
         //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
-        // directory ID 72f988bf-86f1-41af-91ab-2d7cd011db47
+        // 4) gonna need this at some point, not sure when
+        //      directory ID / app owner tenant ID -> 72f988bf-86f1-41af-91ab-2d7cd011db47
 
-        //SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
-        //var domain = "https://microsoft.onmicrosoft.com";
-        //var webApp_clientId = "0908c375-e4c6-47f5-a83b-997f80da9e40";
-        //var clientSecret = "oLIOMlQZDQiiJ7AbXl5MUdjrjCckPZeAo+i4igsOAmSUgy/cciAy6pd7b1z6CWpc=";
-        //var clientCredential = new ClientCredential(webApp_clientId, clientSecret);
-        //var creds = await ApplicationTokenProvider.LoginSilentAsync(domain, clientCredential);
-
-        // User login via interactive popup
-        // Use the client ID of an existing AAD Web application.
         SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
-        var tenant_id = "72f988bf-86f1-41af-91ab-2d7cd011db47";
-        var nativeClientApp_clientId = "0908c375-e4c6-47f5-a83b-997f80da9e40";
-        var activeDirectoryClientSettings = ActiveDirectoryClientSettings.UsePromptOnly(nativeClientApp_clientId, new Uri("urn:ietf:wg:oauth:2.0:oob"));
-        var creds = UserTokenProvider.LoginWithPromptAsync(tenant_id, activeDirectoryClientSettings).Result;
+        var domain = "microsoft.onmicrosoft.com";
+        var webApp_clientId = "0908c375-e4c6-47f5-a83b-997f80da9e40";
+        var clientSecret = "xoIko2UEdHgOttseWxCOsveCu3aykMU6PW3Hh3vwWfU=";
+        var clientCredential = new ClientCredential(webApp_clientId, clientSecret);
+        var creds = ApplicationTokenProvider.LoginSilentAsync(domain, clientCredential).Result;
 
         SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
 
-        _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
+        _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = "aa7297b5-e8cb-4697-ac3d-dac5fe509678" };
         _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
 
-        await _adlsFileSystemClient.FileSystem.MkdirsAsync("bigdataanalyticsadls", "dlstoretemp");
+        await _adlsFileSystemClient.FileSystem.MkdirsAsync("bigdataanalyticsadls", @"temp-aadapp\dlstoretemp");
     }
+
     public void UploadFile()
     {
         string localFolderPath = @".\dlstoretemp\";
