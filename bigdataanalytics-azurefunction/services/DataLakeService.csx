@@ -53,7 +53,7 @@ public class DataLakeService
 
     public async Task CreateDirectory(string dirName)
     {
-        // AAD setups is wonky proc, consult 1-3 to get things started
+        // AAD setups is a wonky process, consult 1-3 to get things started
         // 1) setup an AAD app
         //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
         // 2) get creds
@@ -69,7 +69,7 @@ public class DataLakeService
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile()
+    public void UploadFile(TraceWriter log)
     {
         string workingDir = Directory.GetCurrentDirectory();
         workingDir = workingDir.Replace("\\bin\\Debug", "");
