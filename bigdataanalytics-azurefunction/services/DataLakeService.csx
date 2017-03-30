@@ -62,12 +62,8 @@ public class DataLakeService
         //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
         // 3) lastly need to make sure to give root foler read, write, execute permissions (checking the option for the child folders to inherit these permissions). then remove those permissions from all other folders
 
-        SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
-
         var clientCredential = new ClientCredential(_adWebAppClientID, _adWebAppClientSecret);
         var creds = ApplicationTokenProvider.LoginSilentAsync(_adTenantName, clientCredential).Result;
-
-        SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
 
         _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
         _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
