@@ -20,7 +20,7 @@ using Microsoft.Rest.ClientRuntime;
 using Microsoft.Rest.ClientRuntime.Azure;
 using Microsoft.Rest.ClientRuntime.Azure.Authentication;
 
-public class DataLakeService : TraceWriter
+public class DataLakeService
 {
     private static DataLakeStoreFileSystemManagementClient _adlsFileSystemClient;
     private static DataLakeStoreAccountManagementClient _adlsClient;
