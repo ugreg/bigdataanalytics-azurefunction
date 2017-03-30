@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
+    log.info("Getting da news and tweets . . .");
     MainAsync().Wait();
 
     if (myTimer.IsPastDue)
@@ -22,7 +23,6 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
 static async Task MainAsync()
 {
-    log.info("Getting da news. . .");
     DataIngestService ds = new DataIngestService();
     string allDaNews = ds.getNews();
 
