@@ -20,7 +20,7 @@ using Microsoft.Rest.ClientRuntime;
 using Microsoft.Rest.ClientRuntime.Azure;
 using Microsoft.Rest.ClientRuntime.Azure.Authentication;
 
-public class DataLakeService
+public class DataLakeService : TraceWriter
 {
     private static DataLakeStoreFileSystemManagementClient _adlsFileSystemClient;
     private static DataLakeStoreAccountManagementClient _adlsClient;
@@ -72,7 +72,6 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        TraceWriter log;
         string workingDir = Directory.GetCurrentDirectory();
         log.Info(workingDir);
         workingDir = workingDir.Replace("\\bin\\Debug", "");
