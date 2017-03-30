@@ -5,14 +5,11 @@
 #r "Microsoft.Rest.ClientRuntime.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.dll"
 #r "Microsoft.Rest.ClientRuntime.Azure.Authentication.dll"
-#r "mscorlib.dll"
 
 using System;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Azure.Management.DataLake.Store;
 using Microsoft.Azure.Management.DataLake.Store.Models;
 using Microsoft.Azure.Management.DataLake.StoreUploader;
