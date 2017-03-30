@@ -73,7 +73,6 @@ public class DataLakeService : TraceWriter
     public void UploadFile()
     {
         string workingDir = Directory.GetCurrentDirectory();
-        log.Info(workingDir);
         workingDir = workingDir.Replace("\\bin\\Debug", "");
         string localFolderPath = workingDir + @"\UploadMe\";
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
