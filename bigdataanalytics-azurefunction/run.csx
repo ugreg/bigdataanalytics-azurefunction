@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    MainAsync(log).Wait();
+    MainAsync().Wait();
 
     if (myTimer.IsPastDue)
     {
@@ -20,16 +20,13 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 }
 
-static async Task MainAsync(TraceWriter log)
+static async Task MainAsync()
 {
-    log.Info("Getting da news and tweets . . .");
-
     DataIngestService ds = new DataIngestService();
     string allDaNews = ds.getNews();
 
     NewsModel newsModel = new NewsModel();
     newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
-    log.Info(allDaNews);
 
     DataLakeService dataIngestService = new DataLakeService();
     await dataIngestService.CreateDirectory("superMarioBros");
