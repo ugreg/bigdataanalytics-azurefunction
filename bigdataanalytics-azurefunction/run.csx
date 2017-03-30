@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.info("Getting da news and tweets . . .");
+    log.Info("Getting da news and tweets . . .");
     MainAsync().Wait();
 
     if (myTimer.IsPastDue)
