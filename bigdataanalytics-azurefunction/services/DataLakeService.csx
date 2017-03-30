@@ -69,8 +69,9 @@ public class DataLakeService
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile(TraceWriter log)
+    public void UploadFile()
     {
+        TraceWriter log = new TraceWriter();
         string workingDir = Directory.GetCurrentDirectory();
         workingDir = workingDir.Replace("\\bin\\Debug", "");
         string localFolderPath = workingDir + @"\UploadMe\";
