@@ -14,6 +14,7 @@ using Microsoft.Azure.Management.DataLake.Store;
 using Microsoft.Azure.Management.DataLake.Store.Models;
 using Microsoft.Azure.Management.DataLake.StoreUploader;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.Rest.Azure.Authentication;
 using Microsoft.Rest.ClientRuntime;
 using Microsoft.Rest.ClientRuntime.Azure;
 using Microsoft.Rest.ClientRuntime.Azure.Authentication;
