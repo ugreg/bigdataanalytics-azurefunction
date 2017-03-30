@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.Info("Getting da news. . .");
     MainAsync().Wait();
 
     if (myTimer.IsPastDue)
@@ -23,6 +22,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
 static async Task MainAsync()
 {
+    log.info("Getting da news. . .");
     DataIngestService ds = new DataIngestService();
     string allDaNews = ds.getNews();
 
@@ -30,6 +30,6 @@ static async Task MainAsync()
     newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
 
     DataLakeService dataIngestService = new DataLakeService();
-    // dataIngestService.UploadFile();
-    await dataIngestService.CreateDirectory();
+    await dataIngestService.CreateDirectory("superMarioBros");
+    dataIngestService.UploadFile();
 }
