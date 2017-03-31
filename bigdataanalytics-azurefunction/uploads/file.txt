@@ -1,5 +1,5 @@
 Hello, World!
-From Azure Functions this time!
+From Azure Functions this time again . . .
 
 
 ░░░░░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░░░░░░

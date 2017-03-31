@@ -1,4 +1,5 @@
 #load "services\DataIngestService.csx"
+#load "DataLakeService.csx"
 using System;
 using System.IO;
 using System.Net;
@@ -29,5 +30,8 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
 static async Task MainAsync()
 {
-    DataIngestService dataIngestService = new DataIngestService();
+    // DataIngestService dataIngestService = new DataIngestService();
+
+    DataLakeService _dataLakeService = new DataLakeService();
+    _dataLakeService.UploadFile("file.txt");
 }

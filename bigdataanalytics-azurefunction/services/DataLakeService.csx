@@ -54,11 +54,9 @@ public class DataLakeService
     public async Task CreateDirectory(string dirName)
     {
         // AAD setups is a wonky process, consult 1-3 to get things started
-        // 1) setup an AAD app
-        //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
-        // 2) get creds
-        //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
-        // 3) lastly need to make sure to give root foler read, write, execute permissions (checking the option for the child folders to inherit these permissions). then remove those permissions from all other folders
+        // 1) Setup an AAD app https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
+        // 2) Get creds https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
+        // 3) Lastly need to make sure to give root foler read, write, execute permissions (checking the option for the child folders to inherit these permissions). then remove those permissions from all other folders
 
         var clientCredential = new ClientCredential(_adWebAppClientID, _adWebAppClientSecret);
         var creds = ApplicationTokenProvider.LoginSilentAsync(_adTenantName, clientCredential).Result;
