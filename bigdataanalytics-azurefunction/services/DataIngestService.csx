@@ -1,3 +1,4 @@
+#load "services\DataLakeService.csx"
 #load "..\models\NewsModel.csx"
 #load "..\models\TweetModel.csx"
 
@@ -11,13 +12,22 @@ public class DataIngestService
 
     private static String newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
     private String newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={newsApiKey}";
+    private DataLakeService _dataLakeService;
+    private NewsModel _newsModel;
 
     public DataIngestService()
     {
+        _dataLakeService = new DataLakeService();
+        string allDaNews = this.getNews();
 
+        _newsModel = new NewsModel();
+        _newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
+
+        await dataLakeService.CreateDirectory("superMarioBros2");
+        dataLakeService.UploadFile("file.txt", "brandNewFileFromNewParams", "neoPath");
     }
 
-    public void ingestAllTheThings()
+    public void writeToFile()
     {
 
     }

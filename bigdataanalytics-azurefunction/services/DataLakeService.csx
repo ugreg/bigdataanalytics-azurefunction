@@ -69,15 +69,14 @@ public class DataLakeService
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile()
+    public void UploadFile(string localFileName, string remoteFileName, string remoteFolderPath = "/")
     {
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
 
         string localFolderPath = workingDir + @"uploads\";
-        string localFilePath = Path.Combine(localFolderPath, "file.txt");
+        string localFilePath = Path.Combine(localFolderPath, localFileName);
 
-        string remoteFolderPath = _adlsPermittedDir + "/";
-        string remoteFilePath = Path.Combine(remoteFolderPath, "secondFileUploadedFromFun.txt");
+        string remoteFilePath = Path.Combine(_adlsPermittedDir + remoteFolderPath, remoteFileName);
         bool force = true;
 
         UploadParameters parameters;

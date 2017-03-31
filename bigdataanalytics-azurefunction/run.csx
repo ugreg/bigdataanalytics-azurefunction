@@ -1,5 +1,4 @@
 #load "services\DataIngestService.csx"
-#load "services\DataLakeService.csx"
 using System;
 using System.IO;
 using System.Net;
@@ -30,13 +29,5 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
 static async Task MainAsync()
 {
-    DataIngestService ds = new DataIngestService();
-    string allDaNews = ds.getNews();
-
-    NewsModel newsModel = new NewsModel();
-    newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
-
-    DataLakeService dataIngestService = new DataLakeService();
-    await dataIngestService.CreateDirectory("superMarioBros2");
-    dataIngestService.UploadFile();
+    DataIngestService dataIngestService = new DataIngestService();
 }
