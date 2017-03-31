@@ -71,16 +71,16 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\";
-        string localFolderPath = "";
-        string localFilePath = Path.Combine(localFolderPath, "file.txt");
+        // string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\";
+        // string localFolderPath = "";
+        // string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = _adlsPermittedDir + "/";
         string remoteFilePath = Path.Combine(remoteFolderPath, "fileFirstOneFromFunc.txt");
         bool force = true;
 
         UploadParameters parameters;
-        parameters = new UploadParameters("file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
+        parameters = new UploadParameters(@"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
         DataLakeStoreFrontEndAdapter frontEndAdapter;
         frontEndAdapter = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
         DataLakeStoreUploader uploader;
