@@ -77,7 +77,7 @@ public class DataLakeService
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = _adlsPermittedDir + "/";
-        string remoteFilePath = Path.Combine(remoteFolderPath, "remotefile.txt");
+        string remoteFilePath = Path.Combine(remoteFolderPath, "file.txt");
         bool force = true;
 
         UploadParameters parameters;
