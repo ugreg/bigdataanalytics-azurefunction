@@ -1,4 +1,4 @@
-#load "services\DataLakeService.csx"
+#load "DataLakeService.csx"
 #load "..\models\NewsModel.csx"
 #load "..\models\TweetModel.csx"
 
