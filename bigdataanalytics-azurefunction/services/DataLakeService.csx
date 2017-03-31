@@ -73,15 +73,15 @@ public class DataLakeService
     {
         // string workingDir = Directory.GetCurrentDirectory();
         // workingDir = workingDir.Replace("\\bin\\Debug", "");
-        string localFolderPath = "";
-        string localFilePath = Path.Combine(localFolderPath, "file.txt");
+        // string localFolderPath = "";
+        // string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = _adlsPermittedDir + "/";
         string remoteFilePath = Path.Combine(remoteFolderPath, "fileFirstOneFromFunc.txt");
         bool force = true;
 
         UploadParameters parameters;
-        parameters = new UploadParameters(localFilePath, remoteFilePath, _adlsAccountName, isOverwrite: force);
+        parameters = new UploadParameters("file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
         DataLakeStoreFrontEndAdapter frontEndAdapter;
         frontEndAdapter = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
         DataLakeStoreUploader uploader;
