@@ -36,7 +36,7 @@ public class DataIngestService
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
-        System.IO.File.WriteAllText(localFolderPath, data);
+        System.IO.File.WriteAllText(localFilePath, data);
     }
 
     public string getNews()
