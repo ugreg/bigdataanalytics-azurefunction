@@ -18,18 +18,25 @@ public class DataIngestService
     public DataIngestService()
     {
         _dataLakeService = new DataLakeService();
-        string allDaNews = this.getNews();
+        string rawNews = this.getNews();
 
-        _newsModel = new NewsModel();
-        _newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
+        _news = new NewsModel();
+        _news = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
 
-        await dataLakeService.CreateDirectory("superMarioBros2");
+        this.writeDataToFile(rawNews);
+
+        // await dataLakeService.CreateDirectory("superMarioBros2");
         dataLakeService.UploadFile("file.txt", "brandNewFileFromNewParams", "neoPath");
     }
 
-    public void writeToFile()
+    public void writeDataToFile(string data)
     {
+        string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
 
+        string localFolderPath = workingDir + @"uploads\";
+        string localFilePath = Path.Combine(localFolderPath, "file9000.txt");
+
+        System.IO.File.WriteAllText(localFolderPath, data);
     }
 
     public string getNews()
