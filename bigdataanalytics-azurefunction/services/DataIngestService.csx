@@ -23,10 +23,10 @@ public class DataIngestService
         NewsModel _news = new NewsModel();
         _news = JsonConvert.DeserializeObject<NewsModel>(rawNews);
 
-        // this.writeDataToFile(rawNews);
+        this.writeDataToFile(rawNews);
 
-        _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt");
-        _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt", "inaFOLDER");
+        // _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt");
+        // _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt", "inaFOLDER");
     }
 
     public void writeDataToFile(string data)
