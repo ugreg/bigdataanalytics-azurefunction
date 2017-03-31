@@ -26,7 +26,7 @@ public class DataIngestService
         // this.writeDataToFile(rawNews);
 
         // await dataLakeService.CreateDirectory("superMarioBros2");
-        // _dataLakeService.UploadFile("file.txt");
+        _dataLakeService.UploadFile("file.txt");
     }
 
     public void writeDataToFile(string data)

@@ -15,7 +15,10 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     log.Info("Directories loaded. . .");
 
     log.Info("Processing News and Tweet data. . .");
-    MainAsync().Wait();
+
+    DataIngestService dataIngestService = new DataIngestService();
+
+    // MainAsync().Wait();
 
     if (myTimer.IsPastDue)
     {
@@ -28,10 +31,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 }
 
-static async Task MainAsync()
-{
-    // DataIngestService dataIngestService = new DataIngestService();
+// static async Task MainAsync()
+// {
 
-    DataLakeService dataLakeService = new DataLakeService();
-    dataLakeService.UploadFile();
-}
+// }
