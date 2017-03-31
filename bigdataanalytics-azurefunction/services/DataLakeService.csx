@@ -71,8 +71,7 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        string workingDir = Directory.GetCurrentDirectory();
-        workingDir = workingDir.Replace("\\bin\\Debug", "");
+        string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\";
         string localFolderPath = "";
         string localFilePath = Path.Combine(localFolderPath, "file.txt");
 

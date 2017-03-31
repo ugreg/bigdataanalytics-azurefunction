@@ -10,7 +10,8 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     log.Info("Getting da news and tweets. . .");
 
     string workingDir = Directory.GetCurrentDirectory();
-    log.Info("At " + workingDir);
+    log.Info("Not working out of this directory > " + workingDir);
+    log.Info(@"Working path from D:\home\site\wwwroot\bigdataanalytics-azurefunction\");
 
     MainAsync().Wait();
 
