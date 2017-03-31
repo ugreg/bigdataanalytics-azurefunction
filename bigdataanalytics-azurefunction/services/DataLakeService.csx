@@ -73,7 +73,7 @@ public class DataLakeService
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, "file2.txt");
 
-        string remoteFilePath = Path.Combine(_adlsPermittedDir + "/", "newFileFromNewParams");
+        string remoteFilePath = Path.Combine(_adlsPermittedDir + "/", "newFileFromNewParams.txt");
         bool force = true;
 
         UploadParameters parameters;
