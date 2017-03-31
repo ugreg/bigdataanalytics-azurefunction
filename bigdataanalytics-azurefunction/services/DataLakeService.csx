@@ -71,10 +71,10 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        // string workingDir = Directory.GetCurrentDirectory();
-        // workingDir = workingDir.Replace("\\bin\\Debug", "");
-        // string localFolderPath = "";
-        // string localFilePath = Path.Combine(localFolderPath, "file.txt");
+        string workingDir = Directory.GetCurrentDirectory();
+        workingDir = workingDir.Replace("\\bin\\Debug", "");
+        string localFolderPath = "";
+        string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = _adlsPermittedDir + "/";
         string remoteFilePath = Path.Combine(remoteFolderPath, "fileFirstOneFromFunc.txt");

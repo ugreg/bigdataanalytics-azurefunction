@@ -8,6 +8,10 @@ using Newtonsoft.Json;
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
     log.Info("Getting da news and tweets. . .");
+
+    string workingDir = Directory.GetCurrentDirectory();
+    log.Info("At " + workingDir);
+
     MainAsync().Wait();
 
     if (myTimer.IsPastDue)
