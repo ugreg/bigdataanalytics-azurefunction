@@ -72,7 +72,7 @@ public class DataLakeService
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
 
         string localFolderPath = workingDir + @"uploads\";
-        string localFilePath = Path.Combine(localFolderPath, localFileName);
+        string localFilePath = Path.Combine(localFolderPath, "file2.txt");
 
         string remoteFilePath = Path.Combine(_adlsPermittedDir + "/", "newFileFromNewParams");
         bool force = true;
