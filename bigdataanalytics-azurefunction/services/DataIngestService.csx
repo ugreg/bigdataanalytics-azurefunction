@@ -21,7 +21,7 @@ public class DataIngestService
         string rawNews = this.getNews();
 
         _news = new NewsModel();
-        _news = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
+        _news = JsonConvert.DeserializeObject<NewsModel>(rawNews);
 
         this.writeDataToFile(rawNews);
 
