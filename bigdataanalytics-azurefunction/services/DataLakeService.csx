@@ -81,7 +81,7 @@ public class DataLakeService
         bool force = true;
 
         UploadParameters parameters;
-        parameters = new UploadParameters(@"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\file.txt", remoteFilePath, _adlsAccountName, isOverwrite: force);
+        parameters = new UploadParameters(localFilePath, remoteFilePath, _adlsAccountName, isOverwrite: force);
         DataLakeStoreFrontEndAdapter frontEndAdapter;
         frontEndAdapter = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
         DataLakeStoreUploader uploader;
