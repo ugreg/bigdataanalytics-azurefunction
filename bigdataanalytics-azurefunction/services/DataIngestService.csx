@@ -13,19 +13,18 @@ public class DataIngestService
     private static String _newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
     private String _newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={_newsApiKey}";
     private DataLakeService _dataLakeService;
-    // private NewsModel _news;
+    private NewsModel _news;
 
     public DataIngestService()
     {
         _dataLakeService = new DataLakeService();
-        rawNews = this.getNews();
+        string rawNews = this.getNews();
 
         NewsModel _news = new NewsModel();
         _news = JsonConvert.DeserializeObject<NewsModel>(rawNews);
 
         // this.writeDataToFile(rawNews);
 
-        // await dataLakeService.CreateDirectory("superMarioBros2");
         _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt");
         _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt", "inaFOLDER");
     }
