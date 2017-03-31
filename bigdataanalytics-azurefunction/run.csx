@@ -18,8 +18,6 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
     DataIngestService dataIngestService = new DataIngestService();
 
-    // MainAsync().Wait();
-
     if (myTimer.IsPastDue)
     {
         log.Info("Timer is running late!");
@@ -30,8 +28,3 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     }
     log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 }
-
-// static async Task MainAsync()
-// {
-
-// }

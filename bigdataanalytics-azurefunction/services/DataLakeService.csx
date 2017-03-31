@@ -53,31 +53,20 @@ public class DataLakeService
 
     public async Task CreateDirectory(string dirName)
     {
-        // AAD setups is a wonky process, consult 1-3 to get things started
-        // 1) Setup an AAD app https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
-        // 2) Get creds https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
-        // 3) Lastly need to make sure to give root foler read, write, execute permissions (checking the option for the child folders to inherit these permissions). then remove those permissions from all other folders
-
-        var clientCredential = new ClientCredential(_adWebAppClientID, _adWebAppClientSecret);
-        var creds = ApplicationTokenProvider.LoginSilentAsync(_adTenantName, clientCredential).Result;
-
-        _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
-        _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
-
+        authenticate();
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile(string localFileName, string remoteFileFolder = "/")
+    public void UploadFile(string localFileName, string remoteFileName, string remoteFileFolder = "/")
     {
+        authenticate();
+
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, localFileName);
 
-        if (remoteFileFolder != "/")
-        {
-
-        }
-        string remoteFilePath = Path.Combine(_adlsPermittedDir + remoteFileFolder, "WORKINGSTATE.txt");
+        string remoteFolderPath = _adlsPermittedDir + remoteFileFolder;
+        string remoteFilePath = Path.Combine(remoteFolderPath, remoteFileName);
         bool force = true;
 
         UploadParameters parameters;
@@ -91,4 +80,21 @@ public class DataLakeService
 
         uploader.Execute();
     }
+
+    public void authenticate()
+        {
+            // Must auth EVERY TIME??? interface with AAD file system???
+            // AAD setups is a wonky process, consult 1-3 to get things started
+            // 1) setup an AAD app
+            //      https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
+            // 2) get creds
+            //      https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-authenticate-using-active-directory
+            // 3) lastly need to make sure to give root foler read, write, execute permissions (checking the option for the child folders to inherit these permissions). then remove those permissions from all other folders
+
+            var clientCredential = new ClientCredential(_adWebAppClientID, _adWebAppClientSecret);
+            var creds = ApplicationTokenProvider.LoginSilentAsync(_adTenantName, clientCredential).Result;
+
+            _adlsClient = new DataLakeStoreAccountManagementClient(creds) { SubscriptionId = _subId };
+            _adlsFileSystemClient = new DataLakeStoreFileSystemManagementClient(creds);
+        }
 }
