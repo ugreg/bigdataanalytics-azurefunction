@@ -21,13 +21,5 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 
 static async Task MainAsync()
 {
-    DataIngestService ds = new DataIngestService();
-    string allDaNews = ds.getNews();
 
-    NewsModel newsModel = new NewsModel();
-    newsModel = JsonConvert.DeserializeObject<NewsModel>(allDaNews);
-
-    DataLakeService dataIngestService = new DataLakeService();
-    await dataIngestService.CreateDirectory("superMarioBros");
-    dataIngestService.UploadFile();
 }
