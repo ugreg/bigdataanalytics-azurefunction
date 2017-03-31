@@ -67,10 +67,9 @@ public class DataLakeService
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile(string localFileName)
+    public void UploadFile()
     {
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
-
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, "file2.txt");
 
@@ -79,8 +78,10 @@ public class DataLakeService
 
         UploadParameters parameters;
         parameters = new UploadParameters(localFilePath, remoteFilePath, _adlsAccountName, isOverwrite: force);
+
         DataLakeStoreFrontEndAdapter frontEndAdapter;
         frontEndAdapter = new DataLakeStoreFrontEndAdapter(_adlsAccountName, _adlsFileSystemClient);
+
         DataLakeStoreUploader uploader;
         uploader = new DataLakeStoreUploader(parameters, frontEndAdapter);
 

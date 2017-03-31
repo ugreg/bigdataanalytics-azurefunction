@@ -32,6 +32,6 @@ static async Task MainAsync()
 {
     // DataIngestService dataIngestService = new DataIngestService();
 
-    DataLakeService _dataLakeService = new DataLakeService();
-    _dataLakeService.UploadFile("file.txt");
+    DataLakeService dataLakeService = new DataLakeService();
+    dataLakeService.UploadFile();
 }
