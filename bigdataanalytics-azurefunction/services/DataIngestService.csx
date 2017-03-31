@@ -10,8 +10,8 @@ using Newtonsoft.Json;
 public class DataIngestService
 {
 
-    private static String newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
-    private String newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={newsApiKey}";
+    private static String _newsApiKey = "3e99c92f3b244bc4ae9693eb2f5f97fb";
+    private String _newsApiEndpoint = $"https://newsapi.org/v1/articles?source=techcrunch&sortBy=top&apiKey={_newsApiKey}";
     private DataLakeService _dataLakeService;
     private NewsModel _news;
 
@@ -26,7 +26,7 @@ public class DataIngestService
         this.writeDataToFile(rawNews);
 
         // await dataLakeService.CreateDirectory("superMarioBros2");
-        dataLakeService.UploadFile("file.txt", "brandNewFileFromNewParams", "neoPath");
+        _dataLakeService.UploadFile("file.txt", "brandNewFileFromNewParams", "neoPath");
     }
 
     public void writeDataToFile(string data)
@@ -43,7 +43,7 @@ public class DataIngestService
     {
         try
         {
-            HttpWebRequest request = WebRequest.Create(newsApiEndpoint) as HttpWebRequest;
+            HttpWebRequest request = WebRequest.Create(_newsApiEndpoint) as HttpWebRequest;
             request.Headers.Add("Garnet", "Amethyst");
             request.Headers.Add("AndPearl", "AndSteven");
 
