@@ -76,7 +76,7 @@ public class DataLakeService
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, localFileName);
 
-        string remoteFilePath = Path.Combine(_adlsPermittedDir + "neoPath/", "newFileFromNewParams");
+        string remoteFilePath = Path.Combine(_adlsPermittedDir + "/", "newFileFromNewParams");
         bool force = true;
 
         UploadParameters parameters;
