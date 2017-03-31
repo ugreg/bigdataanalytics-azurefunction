@@ -23,7 +23,7 @@ public class DataIngestService
         _news = new NewsModel();
         _news = JsonConvert.DeserializeObject<NewsModel>(rawNews);
 
-        this.writeDataToFile(rawNews);
+        // this.writeDataToFile(rawNews);
 
         // await dataLakeService.CreateDirectory("superMarioBros2");
         _dataLakeService.UploadFile("file.txt", "brandNewFileFromNewParams", "neoPath");
