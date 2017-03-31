@@ -34,7 +34,7 @@ public class DataIngestService
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
 
         string localFolderPath = workingDir + @"uploads\";
-        string localFilePath = Path.Combine(localFolderPath, "file9000.txt");
+        string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         System.IO.File.WriteAllText(localFolderPath, data);
     }
