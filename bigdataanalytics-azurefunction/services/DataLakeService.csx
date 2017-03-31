@@ -71,12 +71,13 @@ public class DataLakeService
 
     public void UploadFile()
     {
-        // string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\services\";
-        // string localFolderPath = "";
-        // string localFilePath = Path.Combine(localFolderPath, "file.txt");
+        string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
+
+        string localFolderPath = @"uploads\";
+        string localFilePath = Path.Combine(localFolderPath, "file.txt");
 
         string remoteFolderPath = _adlsPermittedDir + "/";
-        string remoteFilePath = Path.Combine(remoteFolderPath, "fileFirstOneFromFunc.txt");
+        string remoteFilePath = Path.Combine(remoteFolderPath, "secondFileUploadedFromFun.txt");
         bool force = true;
 
         UploadParameters parameters;

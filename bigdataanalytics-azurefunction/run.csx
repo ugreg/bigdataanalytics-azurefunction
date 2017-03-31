@@ -7,12 +7,14 @@ using Newtonsoft.Json;
 
 public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.Info("Getting da news and tweets. . .");
+    log.Info("Starting up. . .");
 
     string workingDir = Directory.GetCurrentDirectory();
-    log.Info("Not working out of this directory > " + workingDir);
+    log.Info("Not using this working directory > " + workingDir);
     log.Info(@"Instead we use this VM directory > D:\home\site\wwwroot\bigdataanalytics-azurefunction");
+    log.Info("Directoryies loaded. . .");
 
+    log.Info("Processing News and Tweet data. . .");
     MainAsync().Wait();
 
     if (myTimer.IsPastDue)
