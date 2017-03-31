@@ -25,8 +25,8 @@ public class DataIngestService
 
         this.writeDataToFile(rawNews);
 
-        // _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt");
-        // _dataLakeService.UploadFile("file.txt", "remotesILZLZLZ.txt", "inaFOLDER");
+        _dataLakeService.UploadFile("file.txt", "remoteFile.txt");
+        _dataLakeService.UploadFile("file.txt", "remoteFile.txt", "RawNews");
     }
 
     public void writeDataToFile(string data)
