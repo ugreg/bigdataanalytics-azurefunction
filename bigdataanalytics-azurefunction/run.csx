@@ -1,5 +1,4 @@
 #load "services\DataIngestService.csx"
-#load "services\DataLakeService.csx"
 using System;
 using System.IO;
 using System.Net;
