@@ -1,1 +1,2 @@
 Hello, World!
+From Azure Functions this time!
