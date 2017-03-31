@@ -11,7 +11,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
     string workingDir = Directory.GetCurrentDirectory();
     log.Info("Not using this working directory > " + workingDir);
     log.Info(@"Instead we use this VM directory > D:\home\site\wwwroot\bigdataanalytics-azurefunction");
-    log.Info("Directoryies loaded. . .");
+    log.Info("Directories loaded. . .");
 
     log.Info("Processing News and Tweet data. . .");
     MainAsync().Wait();

@@ -39,7 +39,7 @@ public class DataLakeService
     public DataLakeService()
     {
         _adlsAccountName = "bigdataanalyticsadls";
-        _adlsPermittedDir = "temp-aadapp";
+        _adlsPermittedDir = "temp-aadapp/";
         _adlsURI = "adl://bigdataanalyticsadls.azuredatalakestore.net";
         _resourceGroupName = "BigDataAnalytics";
         _location = "East US 2";
@@ -69,14 +69,14 @@ public class DataLakeService
         await _adlsFileSystemClient.FileSystem.MkdirsAsync(_adlsAccountName, _adlsPermittedDir + "/" + dirName);
     }
 
-    public void UploadFile(string localFileName, string remoteFileName, string remoteFolderPath = "/")
+    public void UploadFile(string localFileName)
     {
         string workingDir = @"D:\home\site\wwwroot\bigdataanalytics-azurefunction\";
 
         string localFolderPath = workingDir + @"uploads\";
         string localFilePath = Path.Combine(localFolderPath, localFileName);
 
-        string remoteFilePath = Path.Combine(_adlsPermittedDir + remoteFolderPath, remoteFileName);
+        string remoteFilePath = Path.Combine(_adlsPermittedDir + "neoPath/", "newFileFromNewParams");
         bool force = true;
 
         UploadParameters parameters;
