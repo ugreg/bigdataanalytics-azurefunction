@@ -25,8 +25,8 @@ public class DataIngestService
 
         this.writeDataToFile(rawNews);
 
-        _dataLakeService.UploadFile("file.txt", "remoteFile.txt");
-        _dataLakeService.UploadFile("file.txt", "remoteFile.txt", "RawNews");
+        _dataLakeService.UploadFile("file.txt", "remoteFileV2.txt");
+        _dataLakeService.UploadFile("file.txt", "remoteFileV2.txt", "RawNews");
     }
 
     public void writeDataToFile(string data)
@@ -75,6 +75,11 @@ public class DataIngestService
 
     public void getTweets()
     {
+        OAuthTokens tokens = new OAuthTokens();
 
+        tokens.ConsumerKey = "Consumer Key";
+        tokens.ConsumerSecret = "Consumer Secret";
+        tokens.AccessToken = "Access Key";
+        tokens.AccessTokenSecret = "Access Secret";
     }
 }

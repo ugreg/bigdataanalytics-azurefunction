@@ -1,4 +1,4 @@
-Hello, World!
+Hello, Worldz!
 From Azure Functions this time again . . .
 
 ░░░░░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░░░░░░
