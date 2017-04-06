@@ -75,11 +75,6 @@ public class DataIngestService
 
     public void getTweets()
     {
-        OAuthTokens tokens = new OAuthTokens();
 
-        tokens.ConsumerKey = "Consumer Key";
-        tokens.ConsumerSecret = "Consumer Secret";
-        tokens.AccessToken = "Access Key";
-        tokens.AccessTokenSecret = "Access Secret";
     }
 }
