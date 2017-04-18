@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace ConsoleApp1
-{
     class TweetModel
     {   
         [JsonProperty("trends")]
@@ -40,4 +38,4 @@ namespace ConsoleApp1
         [JsonProperty("access_token")]
         public string access_token { get; set; }
     }
-}
+
