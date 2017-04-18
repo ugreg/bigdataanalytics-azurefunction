@@ -26,7 +26,7 @@ public class DataIngestService
         //to authenticate against the twitter API
         // TweetAuthModel bearer = JsonConvert.DeserializeObject<TweetAuthModel>(twitterAuth());
             
-        var tweetLine = getTweets(bearer.access_token);
+        // var tweetLine = getTweets(bearer.access_token);
         //Console.WriteLine(tweetLine);
         //TweetModel listOfTweets = JsonConvert.DeserializeObject<TweetModel>(tweetLine);
 
