@@ -113,6 +113,7 @@ public class DataIngestService
             // }
 
             // return "-1";
+            return "";
         }
 
         public string twitterAuth()
@@ -175,6 +176,7 @@ public class DataIngestService
             // }
 
             // return "-1";
+            return "";
         }
     }
 }
