@@ -22,10 +22,10 @@ public class DataIngestService
         string rawNews = this.getNews();
 
         NewsModel _news = JsonConvert.DeserializeObject<NewsModel>(rawNews);
-        
+
         //to authenticate against the twitter API
         // TweetAuthModel bearer = JsonConvert.DeserializeObject<TweetAuthModel>(twitterAuth());
-            
+
         // var tweetLine = getTweets(bearer.access_token);
         //Console.WriteLine(tweetLine);
         //TweetModel listOfTweets = JsonConvert.DeserializeObject<TweetModel>(tweetLine);
